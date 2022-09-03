@@ -30,7 +30,7 @@ class AgileUserStoryParser:
         return doc
 
     def check_conformance(self):
-        matcher.add("UserStory", None, user_story)
+        matcher.add("UserStory", [user_story], on_match = None)
         matches = matcher(self.sent.as_doc())
         #logging.debug(len(matches), matches)
         if matches:
